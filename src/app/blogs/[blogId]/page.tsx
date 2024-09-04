@@ -11,7 +11,9 @@ export const generateStaticParams = async () => {
   }));
 };
 
-const BlogDetails = ({ blog }: { blog: TBlogs }) => {
+const BlogDetails = async({ params }: { params: { blogId: string } }) => {
+    const res = await fetch(`http://localhost:5000/blogs/${params.blogId}`);
+    const blog = await res.json();
   return (
     <div className="card w-2/3 bg-base-100 shadow-xl mx-auto">
       <p className="flex items-center justify-center mx-auto text-accent bg-cyan-100 w-44 px-2 py-1 rounded-full">

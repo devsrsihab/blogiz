@@ -1,4 +1,4 @@
-export interface Blogs {
+export interface TBlogs {
   id: string;
   title: string;
   description: string;
